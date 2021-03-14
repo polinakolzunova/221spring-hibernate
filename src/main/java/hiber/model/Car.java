@@ -15,6 +15,9 @@ public class Car {
     @Column
     private int series;
 
+    @OneToOne(mappedBy = "car")
+    private User user;
+
     public Car() {
     }
 
@@ -41,7 +44,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "{" +
                 "model='" + model + '\'' +
                 ", series=" + series +
                 '}';
